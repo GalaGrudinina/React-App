@@ -26,7 +26,11 @@ setPosts(posts.filter(p=>p.id!==post.id))
   return (
     <div className="App">
      <PostForm create={createPost}/>
-      <PostList remove={removePost} posts={posts} title="the list"/>
+     {posts.length !==0
+     ?<PostList remove={removePost} posts={posts} title="the list"/>
+: <h1 style={{textAlign:'center'}}>
+  No posts found</h1>
+     }
     </div>
   );
 }
